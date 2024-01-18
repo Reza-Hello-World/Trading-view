@@ -1,0 +1,8 @@
+indicator("My script" , overlay = true)
+bullBar=close > open
+bearBar=close<open
+barRange=high-low
+bodyRange=math.abs(open-close)
+trendBar=bodyRange>barRange/2
+plotshape(trendBar and bullBar,"", shape.triangleup, location.belowbar, color.green)
+plotshape(trendBar and bearBar, "" , shape.triangledown , location.abovebar, color.red)
